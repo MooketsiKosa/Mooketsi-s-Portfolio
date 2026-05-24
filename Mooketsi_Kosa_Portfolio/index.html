@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mooketsi Kosa — Data Engineer & Software Developer</title>
+  <meta name="description" content="Final-year BSc Computer Science & Informatics student at UJ. Data Engineer and Software Developer based in Johannesburg, South Africa.">
+  <link rel="icon" href="assets/img/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Portfolio CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ── PARTICLES ──────────────────────────────────── -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ── NAVBAR ────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Mooketsi<span>.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="hero-content">
+      <div class="hero-left" data-aos="fade-right" data-aos-duration="800">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Final Year BSc Computer Science · UJ
+        </div>
+        <h1 class="hero-name">
+          Mooketsi<br><span class="accent">Kosa</span>
+        </h1>
+        <p class="hero-role">
+          <span id="typed-role"></span><span class="typed-cursor">|</span>
+        </p>
+        <p class="hero-desc">
+          Final-year Computer Science student passionate about building things that work — from data pipelines to full-stack web apps. Based in Johannesburg and looking for a graduate role where I can keep growing.
+        </p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn btn-primary"><i class="bi bi-grid-3x3-gap-fill"></i> View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        <!-- Floating tech icons row -->
+        <div class="hero-tech-strip">
+          <span class="tech-pill"><i class="devicon-python-plain colored"></i> Python</span>
+          <span class="tech-pill"><i class="devicon-java-plain colored"></i> Java</span>
+          <span class="tech-pill"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+          <span class="tech-pill"><i class="devicon-react-original colored"></i> React</span>
+          <span class="tech-pill"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+          <span class="tech-pill"><i class="devicon-apachekafka-original"></i> Kafka</span>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="hero-stat-num" data-count="6">0<span>+</span></div>
+            <div class="hero-stat-label">Projects Shipped</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="hero-stat-num">2026</div>
+            <div class="hero-stat-label">Graduating</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="hero-stat-num" data-count="15">0<span>+</span></div>
+            <div class="hero-stat-label">Technologies</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+        <div class="hero-card-glow"></div>
+        <div class="hero-card-photo-wrap">
+          <img src="assets/img/profile-img.jpg" alt="Mooketsi Kosa" class="hero-card-photo">
+          <div class="photo-ring"></div>
+        </div>
+        <h3>Mooketsi Kosa</h3>
+        <p class="card-role">Data Engineer · Software Developer</p>
+
+        <div class="card-info-row"><i class="bi bi-geo-alt-fill"></i><span>Johannesburg, <strong>South Africa</strong></span></div>
+        <div class="card-info-row"><i class="bi bi-envelope-fill"></i><span>KosaMooketsi@gmail.com</span></div>
+        <div class="card-info-row"><i class="bi bi-telephone-fill"></i><span>(+27) 67 363 8642</span></div>
+        <div class="card-info-row"><i class="bi bi-mortarboard-fill"></i><span>BSc CS · <strong>UJ 2026</strong></span></div>
+        <div class="card-info-row availability">
+          <span class="availability-pulse"></span><span>Open to graduate roles</span>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://linkedin.com/in/Mooketsikosa" target="_blank" class="hero-social" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="mailto:KosaMooketsi@gmail.com" class="hero-social" title="Email"><i class="bi bi-envelope-fill"></i></a>
+          <a href="https://github.com/MooketsiKosa" target="_blank" class="hero-social" title="GitHub"><i class="bi bi-github"></i></a>
+          <a href="#resume" class="hero-social" title="Resume"><i class="bi bi-file-earmark-person-fill"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- scroll hint -->
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ──────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-photo-wrap" data-aos="fade-right">
+          <div class="photo-frame">
+            <img src="assets/img/profile-img.jpg" alt="Mooketsi Kosa" class="about-photo">
+          </div>
+          <div class="about-photo-badge">
+            <i class="bi bi-mortarboard-fill"></i>
+            <div>
+              <strong>University of Johannesburg</strong>
+              <span>BSc Computer Science · 2022–2026</span>
+            </div>
+          </div>
+          <div class="about-float-tag about-float-1"><i class="bi bi-code-slash"></i> 6 Projects</div>
+          <div class="about-float-tag about-float-2"><i class="bi bi-globe-americas"></i> JHB, SA</div>
+        </div>
+
+        <div class="about-content" data-aos="fade-left" data-aos-delay="100">
+          <div class="label">About Me</div>
+          <h2 class="section-title">Turning data into<br>decisions at scale</h2>
+
+          <p class="about-text">
+            I'm a final-year BSc Computer Science & Informatics student at the University of Johannesburg, building projects across data engineering, backend development, and full-stack web — because I genuinely enjoy figuring out how systems fit together.
+          </p>
+          <p class="about-text">
+            I've shipped six projects ranging from real-time Kafka pipelines to full-stack farm management platforms. Each one taught me something new, and that's exactly the kind of environment I want to keep working in.
+          </p>
+          <p class="about-text">
+            Trilingual (English, Setswana, Zulu), comfortable in teams, and looking for a graduate role where I can contribute from day one.
+          </p>
+
+          <div class="about-details">
+            <div class="about-detail"><div class="detail-label">Location</div><div class="detail-val">Johannesburg, Gauteng</div></div>
+            <div class="about-detail"><div class="detail-label">Email</div><div class="detail-val" style="font-size:0.78rem;">KosaMooketsi@gmail.com</div></div>
+            <div class="about-detail"><div class="detail-label">Degree</div><div class="detail-val">BSc CS & Informatics</div></div>
+            <div class="about-detail"><div class="detail-label">Languages</div><div class="detail-val">English · Setswana · Zulu</div></div>
+          </div>
+
+          <!-- Tech stack with devicons -->
+          <div class="skills-section">
+            <h4>Technical Stack</h4>
+            <div class="tags-wrap">
+              <span class="skill-tag"><i class="devicon-python-plain colored"></i>Python</span>
+              <span class="skill-tag"><i class="devicon-java-plain colored"></i>Java</span>
+              <span class="skill-tag"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+              <span class="skill-tag"><i class="devicon-apachekafka-original"></i>Kafka</span>
+              <span class="skill-tag"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+              <span class="skill-tag"><i class="devicon-cassandra-plain colored"></i>Cassandra</span>
+              <span class="skill-tag"><i class="devicon-react-original colored"></i>React.js</span>
+              <span class="skill-tag"><i class="devicon-flask-original"></i>Flask</span>
+              <span class="skill-tag"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+              <span class="skill-tag"><i class="devicon-git-plain colored"></i>Git</span>
+              <span class="skill-tag"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+              <span class="skill-tag"><i class="devicon-html5-plain colored"></i>HTML/CSS</span>
+              <span class="skill-tag"><i class="devicon-csharp-plain colored"></i>C#</span>
+              <span class="skill-tag"><i class="devicon-dot-net-plain colored"></i>ASP.NET</span>
+              <span class="skill-tag"><i class="devicon-figma-plain colored"></i>Figma</span>
+              <span class="skill-tag"><i class="devicon-cplusplus-plain colored"></i>C++</span>
+            </div>
+          </div>
+
+          <div class="skill-bars" data-aos="fade-up" data-aos-delay="150">
+            <h4>Core Strengths</h4>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span><i class="devicon-python-plain colored"></i> Python & Data Engineering</span><span class="skill-bar-pct">85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85" style="--bar-color:#3b82f6"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span><i class="devicon-java-plain colored"></i> Backend APIs (Java / FastAPI)</span><span class="skill-bar-pct">80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80" style="--bar-color:#8b5cf6"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span><i class="devicon-postgresql-plain colored"></i> SQL & Database Design</span><span class="skill-bar-pct">80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80" style="--bar-color:#059669"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span><i class="devicon-react-original colored"></i> Full-Stack (React / Node.js)</span><span class="skill-bar-pct">72%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="72" style="--bar-color:#f59e0b"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESUME ─────────────────────────────────────── -->
+  <section id="resume">
+    <div class="container">
+      <div class="resume-header">
+        <div>
+          <div class="label">Resume</div>
+          <h2 class="section-title">Experience &amp; Education</h2>
+        </div>
+        <div class="cv-dropdown" id="cv-dropdown-header">
+          <button class="btn btn-ghost cv-dropdown-toggle" onclick="toggleCvDropdown('cv-dropdown-header')">
+            <i class="bi bi-download"></i> Download CV <i class="bi bi-chevron-down cv-chevron"></i>
+          </button>
+          <div class="cv-dropdown-menu">
+            <a href="YOUR_SOFTWARE_CV_LINK" target="_blank" rel="noopener" class="cv-dropdown-item" id="sw-cv-link-header">
+              <div class="cv-item-icon" style="background:#dbeafe;"><i class="bi bi-code-slash" style="color:#2563eb;"></i></div>
+              <div>
+                <strong>Software Developer CV</strong>
+                <span>Full-stack & backend focus</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right cv-ext-icon"></i>
+            </a>
+            <a href="YOUR_DATA_CV_LINK" target="_blank" rel="noopener" class="cv-dropdown-item" id="de-cv-link-header">
+              <div class="cv-item-icon" style="background:#dcfce7;"><i class="bi bi-diagram-3-fill" style="color:#16a34a;"></i></div>
+              <div>
+                <strong>Data Engineering CV</strong>
+                <span>Pipelines & data systems focus</span>
+              </div>
+              <i class="bi bi-box-arrow-up-right cv-ext-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-cols">
+        <!-- LEFT: Education -->
+        <div data-aos="fade-right">
+          <p class="resume-col-title">Education</p>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="timeline-date">Feb 2022 – Nov 2026 (Expected)</div>
+            <div class="timeline-title">BSc Computer Science & Informatics</div>
+            <div class="timeline-org"><i class="bi bi-building"></i> University of Johannesburg, Gauteng</div>
+            <ul class="timeline-desc">
+              <li>Data Structures, Algorithms, Databases, Machine Learning, Computer Systems</li>
+              <li>Certificate in 4IR (Fourth Industrial Revolution)</li>
+              <li>Certificate in African Insight</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-award-fill"></i></div>
+            <div class="timeline-date">2023</div>
+            <div class="timeline-title">Certificate — Introduction to Python</div>
+            <div class="timeline-org"><i class="bi bi-laptop"></i> Gritlab Africa · Online</div>
+            <ul class="timeline-desc">
+              <li>Python fundamentals, algorithms, and data-oriented problem-solving.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-book-fill"></i></div>
+            <div class="timeline-date">Jan 2018 – Dec 2021</div>
+            <div class="timeline-title">National Senior Certificate (Matric)</div>
+            <div class="timeline-org"><i class="bi bi-geo-alt-fill"></i> Batswana Commercial Secondary, Mahikeng</div>
+            <ul class="timeline-desc">
+              <li>Class Representative — liaised between students and faculty</li>
+              <li>School Treasurer — managed class funds and budget oversight</li>
+            </ul>
+          </div>
+
+          <!-- CV Download Card -->
+          <div class="cv-card" data-aos="fade-up" data-aos-delay="120">
+            <div class="cv-card-header">
+              <div class="cv-card-icon"><i class="bi bi-file-earmark-person-fill"></i></div>
+              <div>
+                <h4>Download My CV</h4>
+                <p>Choose the version that fits your opening</p>
+              </div>
+            </div>
+            <div class="cv-options">
+              <a href="YOUR_SOFTWARE_CV_LINK" target="_blank" rel="noopener" class="cv-option-btn" id="sw-cv-link-card">
+                <div class="cv-option-icon" style="background:#dbeafe;">
+                  <i class="bi bi-code-slash" style="color:#2563eb;"></i>
+                </div>
+                <div class="cv-option-text">
+                  <strong>Software Developer</strong>
+                  <span>Full-stack · Backend · APIs</span>
+                </div>
+                <i class="bi bi-download cv-option-arrow"></i>
+              </a>
+              <a href="YOUR_DATA_CV_LINK" target="_blank" rel="noopener" class="cv-option-btn" id="de-cv-link-card">
+                <div class="cv-option-icon" style="background:#dcfce7;">
+                  <i class="bi bi-diagram-3-fill" style="color:#16a34a;"></i>
+                </div>
+                <div class="cv-option-text">
+                  <strong>Data Engineering</strong>
+                  <span>Pipelines · Kafka · Databases</span>
+                </div>
+                <i class="bi bi-download cv-option-arrow"></i>
+              </a>
+            </div>
+            <p class="cv-note"><i class="bi bi-info-circle"></i> Links open your CV in a new tab — update them in main.js</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Experience + Projects -->
+        <div data-aos="fade-left" data-aos-delay="100">
+          <p class="resume-col-title">Experience</p>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-briefcase-fill"></i></div>
+            <div class="timeline-date">Aug 2023 – Nov 2025</div>
+            <div class="timeline-title">Software Developer Intern</div>
+            <div class="timeline-org"><i class="bi bi-building"></i> Johannesburg Business School (JBS)</div>
+            <ul class="timeline-desc">
+              <li>Gained hands-on exposure to backend development alongside university studies.</li>
+              <li>Applied Python and Java skills to practical tasks, reinforcing interest in data engineering.</li>
+            </ul>
+          </div>
+
+          <p class="resume-col-title" style="margin-top:36px;">Projects</p>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#16a34a;"><i class="bi bi-tree-fill"></i></div>
+            <div class="timeline-date">2026</div>
+            <div class="timeline-title">FarmSmart Analytics Platform</div>
+            <div class="timeline-org"><i class="devicon-python-plain colored"></i> Python · Flask · PostgreSQL</div>
+            <ul class="timeline-desc"><li>Farm data layer with weather integration and real-time dashboard analytics.</li></ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#ca8a04;"><i class="bi bi-people-fill"></i></div>
+            <div class="timeline-date">2026</div>
+            <div class="timeline-title">FarmForward – Farm Management Platform</div>
+            <div class="timeline-org"><i class="devicon-nodejs-plain colored"></i> Node.js · Express.js · PostgreSQL</div>
+            <ul class="timeline-desc"><li>Full-stack app; JWT auth, 8 API modules, 10-table DB schema.</li></ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#9333ea;"><i class="bi bi-shop"></i></div>
+            <div class="timeline-date">2025</div>
+            <div class="timeline-title">Eco-Hub – Second-Hand Marketplace</div>
+            <div class="timeline-org"><i class="devicon-dot-net-plain colored"></i> ASP.NET · C# · WCF · SQL Server</div>
+            <ul class="timeline-desc"><li>n-tier e-commerce platform with shopping cart, invoice and manager portal.</li></ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#ea580c;"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="timeline-date">2025</div>
+            <div class="timeline-title">MatricPath – Application & Bursary Portal</div>
+            <div class="timeline-org"><i class="devicon-react-original colored"></i> React.js · Flask · PostgreSQL</div>
+            <ul class="timeline-desc"><li>Guides matric learners through university applications and bursary listings.</li></ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:#0d2d6e;"><i class="bi bi-activity"></i></div>
+            <div class="timeline-date">2024</div>
+            <div class="timeline-title">Real-Time Data Pipeline</div>
+            <div class="timeline-org"><i class="devicon-apachekafka-original"></i> Kafka · Python · PostgreSQL · Cassandra · FastAPI</div>
+            <ul class="timeline-desc"><li>Event ingestion pipeline streaming into dual databases with a FastAPI query layer.</li></ul>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-server"></i></div>
+            <div class="timeline-date">2023</div>
+            <div class="timeline-title">RESTful API Service</div>
+            <div class="timeline-org"><i class="devicon-java-plain colored"></i> Java · Quarkus · PostgreSQL</div>
+            <ul class="timeline-desc"><li>Scalable API with auth, validation, TDD, and full documentation.</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ───────────────────────────────────── -->
+  <section id="services">
+    <div class="container">
+      <div style="max-width:560px;" data-aos="fade-up">
+        <div class="label">What I Offer</div>
+        <h2 class="section-title">Capabilities &amp; Services</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="60">
+          <div class="service-icon-wrap"><div class="service-icon"><i class="bi bi-diagram-3-fill"></i></div></div>
+          <h3>Data Pipeline Engineering</h3>
+          <p>Real-time and batch pipelines using Apache Kafka and Python — built for high throughput, fault tolerance, and scale.</p>
+          <div class="service-tech"><i class="devicon-python-plain colored"></i><i class="devicon-apachekafka-original"></i><i class="devicon-postgresql-plain colored"></i></div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="service-icon-wrap"><div class="service-icon"><i class="bi bi-server"></i></div></div>
+          <h3>Backend API Development</h3>
+          <p>Scalable RESTful APIs in Python and Java with proper auth, validation, and documentation.</p>
+          <div class="service-tech"><i class="devicon-fastapi-plain colored"></i><i class="devicon-java-plain colored"></i><i class="devicon-flask-original"></i></div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="180">
+          <div class="service-icon-wrap"><div class="service-icon"><i class="bi bi-database-fill-gear"></i></div></div>
+          <h3>Database Design</h3>
+          <p>Schema design and query optimisation across PostgreSQL, MySQL, and Cassandra — relational and NoSQL.</p>
+          <div class="service-tech"><i class="devicon-postgresql-plain colored"></i><i class="devicon-mysql-plain colored"></i><i class="devicon-cassandra-plain colored"></i></div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="service-icon-wrap"><div class="service-icon"><i class="bi bi-code-slash"></i></div></div>
+          <h3>Full-Stack Development</h3>
+          <p>End-to-end web applications with React.js on the frontend and Flask or FastAPI on the backend.</p>
+          <div class="service-tech"><i class="devicon-react-original colored"></i><i class="devicon-nodejs-plain colored"></i><i class="devicon-flask-original"></i></div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon-wrap"><div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div></div>
+          <h3>Data Analytics & Reporting</h3>
+          <p>Transforming raw data into dashboards and financial reports using Python, SQL, and analytics tooling.</p>
+          <div class="service-tech"><i class="devicon-python-plain colored"></i><i class="devicon-postgresql-plain colored"></i></div>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="360">
+          <div class="service-icon-wrap"><div class="service-icon"><i class="bi bi-gear-wide-connected"></i></div></div>
+          <h3>Distributed Systems</h3>
+          <p>Event-driven microservices architectures and scalable infrastructure design using Kafka and modern patterns.</p>
+          <div class="service-tech"><i class="devicon-apachekafka-original"></i><i class="devicon-java-plain colored"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ───────────────────────────────────── -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="portfolio-header" data-aos="fade-up">
+        <div>
+          <div class="label">Portfolio</div>
+          <h2 class="section-title">Selected Projects</h2>
+        </div>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="data">Data Eng</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Card 1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="60" data-category="fullstack data">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-thumb" style="--thumb-from:#dcfce7;--thumb-to:#bbf7d0;">
+                <div class="project-thumb-icon" style="background:#16a34a;box-shadow:0 8px 32px rgba(22,163,74,0.4);">
+                  <i class="bi bi-tree-fill"></i>
+                </div>
+                <div class="project-year">2026</div>
+              </div>
+              <div class="project-body">
+                <div class="project-type"><span class="type-dot" style="background:#16a34a"></span>Full-Stack · Data Engineering</div>
+                <div class="project-title">FarmSmart Analytics Platform</div>
+                <p class="project-desc">Farm management data layer with PostgreSQL, weather feeds, and real-time dashboard analytics via Flask REST API.</p>
+                <div class="project-tags">
+                  <span class="project-tag"><i class="devicon-python-plain colored"></i>Python</span>
+                  <span class="project-tag"><i class="devicon-flask-original"></i>Flask</span>
+                  <span class="project-tag"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                </div>
+                <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
+              </div>
+            </div>
+            <div class="project-back" style="--back-color:#16a34a;">
+              <div class="project-back-icon"><i class="bi bi-tree-fill"></i></div>
+              <h3>FarmSmart</h3>
+              <p>Built the entire data layer: normalised PostgreSQL schema for crop, livestock, and expense records. Integrated external weather feeds for enrichment and analytics.</p>
+              <ul class="project-back-list">
+                <li><i class="bi bi-check2-circle"></i> External weather API integration</li>
+                <li><i class="bi bi-check2-circle"></i> Real-time dashboard analytics</li>
+                <li><i class="bi bi-check2-circle"></i> Normalised multi-table schema</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="120" data-category="fullstack">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-thumb" style="--thumb-from:#fef9c3;--thumb-to:#fde68a;">
+                <div class="project-thumb-icon" style="background:#ca8a04;box-shadow:0 8px 32px rgba(202,138,4,0.4);">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <div class="project-year">2026</div>
+              </div>
+              <div class="project-body">
+                <div class="project-type"><span class="type-dot" style="background:#ca8a04"></span>Full-Stack</div>
+                <div class="project-title">FarmForward</div>
+                <p class="project-desc">Full-stack farm management with manager & worker dashboards, JWT auth, 8 API modules, and a 10-table DB schema.</p>
+                <div class="project-tags">
+                  <span class="project-tag"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+                  <span class="project-tag"><i class="devicon-express-original"></i>Express</span>
+                  <span class="project-tag"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                </div>
+                <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
+              </div>
+            </div>
+            <div class="project-back" style="--back-color:#ca8a04;">
+              <div class="project-back-icon"><i class="bi bi-people-fill"></i></div>
+              <h3>FarmForward</h3>
+              <p>Manager and worker dashboards with full CRUD across tasks, employees, resources, complaints, and analytics.</p>
+              <ul class="project-back-list">
+                <li><i class="bi bi-check2-circle"></i> JWT authentication</li>
+                <li><i class="bi bi-check2-circle"></i> 8 RESTful API route modules</li>
+                <li><i class="bi bi-check2-circle"></i> 10-table normalised schema</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="180" data-category="fullstack">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-thumb" style="--thumb-from:#fae8ff;--thumb-to:#e9d5ff;">
+                <div class="project-thumb-icon" style="background:#9333ea;box-shadow:0 8px 32px rgba(147,51,234,0.4);">
+                  <i class="bi bi-shop"></i>
+                </div>
+                <div class="project-year">2025</div>
+              </div>
+              <div class="project-body">
+                <div class="project-type"><span class="type-dot" style="background:#9333ea"></span>Full-Stack · E-Commerce</div>
+                <div class="project-title">Eco-Hub Marketplace</div>
+                <p class="project-desc">n-tier e-commerce for students. ASP.NET WebForms + WCF SOAP, with cart, checkout, invoices and manager portal.</p>
+                <div class="project-tags">
+                  <span class="project-tag"><i class="devicon-dot-net-plain colored"></i>ASP.NET</span>
+                  <span class="project-tag"><i class="devicon-csharp-plain colored"></i>C#</span>
+                  <span class="project-tag"><i class="devicon-microsoftsqlserver-plain colored"></i>SQL Server</span>
+                </div>
+                <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
+              </div>
+            </div>
+            <div class="project-back" style="--back-color:#9333ea;">
+              <div class="project-back-icon"><i class="bi bi-shop"></i></div>
+              <h3>Eco-Hub</h3>
+              <p>University second-hand marketplace built on an n-tier architecture with WCF for business logic separation.</p>
+              <ul class="project-back-list">
+                <li><i class="bi bi-check2-circle"></i> Shopping cart & checkout</li>
+                <li><i class="bi bi-check2-circle"></i> Invoice generation</li>
+                <li><i class="bi bi-check2-circle"></i> Manager admin portal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="240" data-category="fullstack">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-thumb" style="--thumb-from:#fed7aa;--thumb-to:#fdba74;">
+                <div class="project-thumb-icon" style="background:#ea580c;box-shadow:0 8px 32px rgba(234,88,12,0.4);">
+                  <i class="bi bi-mortarboard-fill"></i>
+                </div>
+                <div class="project-year">2025</div>
+              </div>
+              <div class="project-body">
+                <div class="project-type"><span class="type-dot" style="background:#ea580c"></span>Full-Stack · EdTech</div>
+                <div class="project-title">MatricPath Portal</div>
+                <p class="project-desc">Guides SA matric learners through university applications, institution directories, and bursary listings.</p>
+                <div class="project-tags">
+                  <span class="project-tag"><i class="devicon-react-original colored"></i>React.js</span>
+                  <span class="project-tag"><i class="devicon-flask-original"></i>Flask</span>
+                  <span class="project-tag"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                </div>
+                <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
+              </div>
+            </div>
+            <div class="project-back" style="--back-color:#ea580c;">
+              <div class="project-back-icon"><i class="bi bi-mortarboard-fill"></i></div>
+              <h3>MatricPath</h3>
+              <p>Helps first-generation SA students navigate university applications with a step-by-step multi-institution guide.</p>
+              <ul class="project-back-list">
+                <li><i class="bi bi-check2-circle"></i> Institution directory</li>
+                <li><i class="bi bi-check2-circle"></i> Bursary listings</li>
+                <li><i class="bi bi-check2-circle"></i> Multi-step comparison tool</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="data">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-thumb" style="--thumb-from:#dbeafe;--thumb-to:#bfdbfe;">
+                <div class="project-thumb-icon" style="background:#1d4ed8;box-shadow:0 8px 32px rgba(29,78,216,0.4);">
+                  <i class="bi bi-activity"></i>
+                </div>
+                <div class="project-year">2024</div>
+              </div>
+              <div class="project-body">
+                <div class="project-type"><span class="type-dot" style="background:#1d4ed8"></span>Data Engineering</div>
+                <div class="project-title">Real-Time Data Pipeline</div>
+                <p class="project-desc">End-to-end event ingestion using Kafka + Python into PostgreSQL & Cassandra, with a FastAPI query layer.</p>
+                <div class="project-tags">
+                  <span class="project-tag"><i class="devicon-apachekafka-original"></i>Kafka</span>
+                  <span class="project-tag"><i class="devicon-python-plain colored"></i>Python</span>
+                  <span class="project-tag"><i class="devicon-cassandra-plain colored"></i>Cassandra</span>
+                  <span class="project-tag"><i class="devicon-fastapi-plain colored"></i>FastAPI</span>
+                </div>
+                <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
+              </div>
+            </div>
+            <div class="project-back" style="--back-color:#1d4ed8;">
+              <div class="project-back-icon"><i class="bi bi-activity"></i></div>
+              <h3>Real-Time Pipeline</h3>
+              <p>High-throughput Kafka pipeline with dual-database persistence and a FastAPI endpoint for low-latency downstream access.</p>
+              <ul class="project-back-list">
+                <li><i class="bi bi-check2-circle"></i> Apache Kafka ingestion</li>
+                <li><i class="bi bi-check2-circle"></i> Dual DB (SQL + NoSQL)</li>
+                <li><i class="bi bi-check2-circle"></i> FastAPI query layer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="360" data-category="backend">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-thumb" style="--thumb-from:#e0f2fe;--thumb-to:#bae6fd;">
+                <div class="project-thumb-icon" style="background:#0369a1;box-shadow:0 8px 32px rgba(3,105,161,0.4);">
+                  <i class="bi bi-server"></i>
+                </div>
+                <div class="project-year">2023</div>
+              </div>
+              <div class="project-body">
+                <div class="project-type"><span class="type-dot" style="background:#0369a1"></span>Backend API</div>
+                <div class="project-title">RESTful API Service</div>
+                <p class="project-desc">Scalable Java/Quarkus API with auth, input validation, TDD unit tests, and thorough schema documentation.</p>
+                <div class="project-tags">
+                  <span class="project-tag"><i class="devicon-java-plain colored"></i>Java</span>
+                  <span class="project-tag"><i class="devicon-quarkus-plain colored"></i>Quarkus</span>
+                  <span class="project-tag"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                </div>
+                <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
+              </div>
+            </div>
+            <div class="project-back" style="--back-color:#0369a1;">
+              <div class="project-back-icon"><i class="bi bi-server"></i></div>
+              <h3>RESTful API</h3>
+              <p>Production-ready REST API built with TDD discipline, proper authentication, and best-practice schema design.</p>
+              <ul class="project-back-list">
+                <li><i class="bi bi-check2-circle"></i> Test-driven development</li>
+                <li><i class="bi bi-check2-circle"></i> JWT authentication</li>
+                <li><i class="bi bi-check2-circle"></i> Full API documentation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div data-aos="fade-up">
+        <div class="label">Contact</div>
+        <h2 class="section-title">Let's Work Together</h2>
+      </div>
+      <div class="contact-grid">
+
+        <div data-aos="fade-right" data-aos-delay="80">
+          <h3>Open to graduate &amp; intern roles</h3>
+          <p>I'm a final-year student actively looking for opportunities in data engineering, backend development, and software engineering. I respond within 24 hours.</p>
+
+          <div class="contact-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Location</strong><span>Johannesburg, Gauteng, South Africa</span></div></div>
+          <div class="contact-item"><i class="bi bi-telephone-fill"></i><div><strong>Phone</strong><span>(+27) 67 363 8642</span></div></div>
+          <div class="contact-item"><i class="bi bi-envelope-fill"></i><div><strong>Email</strong><span>KosaMooketsi@gmail.com</span></div></div>
+          <div class="contact-item" style="border-bottom:none;"><i class="bi bi-linkedin"></i><div><strong>LinkedIn</strong><span>linkedin.com/in/Mooketsikosa</span></div></div>
+
+          <div class="contact-socials">
+            <a href="https://linkedin.com/in/Mooketsikosa" target="_blank" class="contact-social"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/MooketsiKosa" target="_blank" class="contact-social"><i class="bi bi-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="contact-form" data-aos="fade-left" data-aos-delay="120">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name"><i class="bi bi-person"></i> Full Name</label>
+              <input type="text" id="name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email"><i class="bi bi-envelope"></i> Email</label>
+              <input type="email" id="email" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:18px;">
+            <label for="subject"><i class="bi bi-chat-text"></i> Subject</label>
+            <input type="text" id="subject" placeholder="e.g. Graduate Developer Position">
+          </div>
+          <div class="form-group" style="margin-top:18px;">
+            <label for="message"><i class="bi bi-pencil"></i> Message</label>
+            <textarea id="message" placeholder="Tell me about the role or opportunity…"></textarea>
+          </div>
+          <button class="form-submit" onclick="sendEmail()">Send Message <i class="bi bi-send-fill"></i></button>
+          <p id="form-feedback" class="form-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Mooketsi<span>.</span></div>
+        <p class="footer-text">© 2026 Mooketsi Kosa — All rights reserved</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#resume">Resume</a>
+          <a href="#portfolio">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- AOS from CDN -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
