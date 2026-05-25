@@ -115,8 +115,8 @@ function sendEmail() {
     return;
   }
   const body = `Hi Mooketsi,%0A%0AName: ${encodeURIComponent(name)} (${encodeURIComponent(email)})%0A%0A${encodeURIComponent(message)}`;
-  window.location.href = `mailto:Kosamooketsi@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-  feedback.textContent = 'Opening your email client…';
+  window.open(`mailto:Kosamooketsi@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
+  feedback.textContent = 'Your mail app should now be open — just hit send!';
   feedback.className = 'form-feedback';
 }
 
