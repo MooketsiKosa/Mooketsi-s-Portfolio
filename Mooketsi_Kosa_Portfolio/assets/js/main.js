@@ -115,15 +115,15 @@ function sendEmail() {
     return;
   }
   const body = `Hi Mooketsi,%0A%0AName: ${encodeURIComponent(name)} (${encodeURIComponent(email)})%0A%0A${encodeURIComponent(message)}`;
-  window.location.href = `mailto:KosaMooketsi@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+  window.location.href = `mailto:Kosamooketsi@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
   feedback.textContent = 'Opening your email client…';
   feedback.className = 'form-feedback';
 }
 
 // ── CV Links — update these two URLs with your actual links ─
 const CV_LINKS = {
-  software: 'YOUR_SOFTWARE_DEVELOPER_CV_LINK_HERE',  // e.g. https://drive.google.com/file/d/XXXX/view
-  data:     'YOUR_DATA_ENGINEERING_CV_LINK_HERE'     // e.g. https://drive.google.com/file/d/YYYY/view
+  software: 'assets\Cvs\Mooketsi_s_Resume_Software Engineering.pdf',  // e.g. https://drive.google.com/file/d/XXXX/view
+  data:     'assets\Cvs\Mooketsi_s_Resume_Data Engineering.pdf'     // e.g. https://drive.google.com/file/d/YYYY/view
 };
 
 // Inject links into all CV buttons
