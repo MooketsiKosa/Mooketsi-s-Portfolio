@@ -122,19 +122,19 @@ function sendEmail() {
 
 // ── CV Links — update these two URLs with your actual links ─
 const CV_LINKS = {
-  software: 'assets\Cvs\Mooketsi_s_Resume_Software Engineering.pdf',  // e.g. https://drive.google.com/file/d/XXXX/view
-  data:     'assets\Cvs\Mooketsi_s_Resume_Data Engineering.pdf'     // e.g. https://drive.google.com/file/d/YYYY/view
+  software: 'https://drive.google.com/file/d/1x5PDthVA5Hfl-UgCDUpUrqAJwcQIZ-W1/view?usp=drive_link',
+  data:     'https://drive.google.com/file/d/1D5TLQ81I6MUi-KRBFvJWt7YSMgXWN_-W/view?usp=drive_link'
 };
 
 // Inject links into all CV buttons
 function initCvLinks() {
   ['sw-cv-link-header','sw-cv-link-card'].forEach(id => {
     const el = document.getElementById(id);
-    if (el && CV_LINKS.software !== 'assets\Cvs\Mooketsi_s_Resume_Software Engineering.pdf') el.href = CV_LINKS.software;
+    if (el && CV_LINKS.software !== 'https://drive.google.com/file/d/1x5PDthVA5Hfl-UgCDUpUrqAJwcQIZ-W1/view?usp=drive_link') el.href = CV_LINKS.software;
   });
   ['de-cv-link-header','de-cv-link-card'].forEach(id => {
     const el = document.getElementById(id);
-    if (el && CV_LINKS.data !== 'YOUR_DATA_ENGINEERING_CV_LINK_HERE') el.href = CV_LINKS.data;
+    if (el && CV_LINKS.data !== 'https://drive.google.com/file/d/1D5TLQ81I6MUi-KRBFvJWt7YSMgXWN_-W/view?usp=drive_link') el.href = CV_LINKS.data;
   });
 }
 initCvLinks();
