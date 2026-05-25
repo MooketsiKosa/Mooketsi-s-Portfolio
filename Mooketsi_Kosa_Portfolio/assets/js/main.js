@@ -130,7 +130,7 @@ const CV_LINKS = {
 function initCvLinks() {
   ['sw-cv-link-header','sw-cv-link-card'].forEach(id => {
     const el = document.getElementById(id);
-    if (el && CV_LINKS.software !== 'YOUR_SOFTWARE_DEVELOPER_CV_LINK_HERE') el.href = CV_LINKS.software;
+    if (el && CV_LINKS.software !== 'assets\Cvs\Mooketsi_s_Resume_Software Engineering.pdf') el.href = CV_LINKS.software;
   });
   ['de-cv-link-header','de-cv-link-card'].forEach(id => {
     const el = document.getElementById(id);
