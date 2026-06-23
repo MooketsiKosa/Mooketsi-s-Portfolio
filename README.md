@@ -4,19 +4,19 @@ A personal portfolio website built in vanilla HTML, CSS, and JavaScript. Feature
 **Live site:** [mooketsikosa.netlify.app](https://mooketsikosa.netlify.app)
 
 ## Project Structure
-Mooketsi_Kosa_Portfolio/
-├── index.html                        # Main HTML — structure only, no inline styles
-├── assets/
-│   ├── css/
-│   │   └── style.css                 # All styling including 3D motion rules
-│   ├── js/
-│   │   └── main.js                   # All behaviour: Three.js, tilt, scroll, typed, AOS
-│   ├── img/
-│   │   └── profile-img.jpg           # Profile photo
-│   └── Cvs/
-│       ├── Mooketsi_s_Resume_Software Engineering.pdf
-│       └── Mooketsi_s_Resume_Data Engineering.pdf
-└── README.md
+    Mooketsi_Kosa_Portfolio/
+    ├── index.html                        # Main HTML — structure only, no inline styles
+    ├── assets/
+    │   ├── css/
+    │   │   └── style.css                 # All styling including 3D motion rules
+    │   ├── js/
+    │   │   └── main.js                   # All behaviour: Three.js, tilt, scroll, typed, AOS
+    │   ├── img/
+    │   │   └── profile-img.jpg           # Profile photo
+    │   └── Cvs/
+    │       ├── Mooketsi_s_Resume_Software Engineering.pdf
+    │       └── Mooketsi_s_Resume_Data Engineering.pdf
+    └── README.md
 ## Features
 ### 3D Motion & Visuals
 - **Three.js hero** — rotating icosahedron centrepiece with a wireframe shell, orbiting coloured spheres, a floating particle field with connection lines, and mouse-driven camera parallax. Fades out as the user scrolls past the hero section
