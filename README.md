@@ -1,11 +1,11 @@
-# Mooketsi Kosa — Developer Portfolio
+# Mooketsi Kosa - Developer Portfolio
 A personal portfolio website built in vanilla HTML, CSS, and JavaScript. Features a Three.js 3D hero section, scroll-driven depth transitions, 3D card tilt effects, animated skill bars, project filtering, and a contact form.
 
 **Live site:** [mooketsikosa.netlify.app](https://mooketsikosa.netlify.app)
 
 ## Project Structure
     Mooketsi_Kosa_Portfolio/
-    ├── index.html                        # Main HTML — structure only, no inline styles
+    ├── index.html                        # Main HTML - structure only, no inline styles
     ├── assets/
     │   ├── css/
     │   │   └── style.css                 # All styling including 3D motion rules
@@ -51,12 +51,12 @@ A personal portfolio website built in vanilla HTML, CSS, and JavaScript. Feature
 ## Getting Started
 No build step or package manager needed. The project runs entirely in the browser.
 
-**Option 1 — Open directly**
+**Option 1 - Open directly**
 ```
 Open index.html in any modern browser
 ```
 
-**Option 2 — Local dev server (recommended to avoid CORS on assets)**
+**Option 2 - Local dev server (recommended to avoid CORS on assets)**
 ```bash
 # Using Python
 python -m http.server 3000
