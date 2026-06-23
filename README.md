@@ -19,9 +19,9 @@ A personal portfolio website built in vanilla HTML, CSS, and JavaScript. Feature
     └── README.md
 ## Features
 ### 3D Motion & Visuals
-- **Three.js hero** — rotating icosahedron centrepiece with a wireframe shell, orbiting coloured spheres, a floating particle field with connection lines, and mouse-driven camera parallax. Fades out as the user scrolls past the hero section
-- **3D card tilt** — project cards track the mouse cursor and tilt up to 12° in perspective on hover, snapping back smoothly on leave
-- **Scroll depth transitions** — sections enter the viewport by rotating forward from a slightly recessed 3D position, giving a layered depth feel as the user scrolls. Respects `prefers-reduced-motion`
+- **Three.js hero** - rotating icosahedron centrepiece with a wireframe shell, orbiting coloured spheres, a floating particle field with connection lines, and mouse-driven camera parallax. Fades out as the user scrolls past the hero section
+- **3D card tilt** - project cards track the mouse cursor and tilt up to 12° in perspective on hover, snapping back smoothly on leave
+- **Scroll depth transitions** - sections enter the viewport by rotating forward from a slightly recessed 3D position, giving a layered depth feel as the user scrolls. Respects `prefers-reduced-motion`
 
 ### Content & Interaction
 - **Typewriter role animation** - cycles through Data Engineer, Software Developer, Backend Developer, Final-Year CS Student
