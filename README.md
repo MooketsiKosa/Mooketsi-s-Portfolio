@@ -73,8 +73,8 @@ Open `assets/js/main.js` and update the two Google Drive URLs at the top of the 
 
 ```js
 const CV_LINKS = {
-  software: 'https://drive.google.com/file/d/YOUR_SOFTWARE_CV_ID/view',
-  data:     'https://drive.google.com/file/d/YOUR_DATA_CV_ID/view'
+  software: 'https://drive.google.com/file/d/1_7_KYotPU_zzZorbR_AnH4TUEs56jZdG/view?usp=drive_link',
+  data:     'https://drive.google.com/file/d/1D5TLQ81I6MUi-KRBFvJWt7YSMgXWN_-W/view?usp=drive_link'
 };
 ```
 
