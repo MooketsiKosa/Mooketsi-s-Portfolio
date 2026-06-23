@@ -9,8 +9,8 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ── Active nav link ─────────────────────────────
-const sections = document.querySelectorAll('section[id]');
-const navAs    = document.querySelectorAll('.nav-links a');
+const sections    = document.querySelectorAll('section[id]');
+const navAs       = document.querySelectorAll('.nav-links a');
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -30,7 +30,7 @@ hamburger.addEventListener('click', () => {
   const spans = hamburger.querySelectorAll('span');
   if (navLinks.classList.contains('open')) {
     spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-    spans[1].style.opacity = '0';
+    spans[1].style.opacity   = '0';
     spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
   } else {
     spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
@@ -111,30 +111,28 @@ function sendEmail() {
   const feedback = document.getElementById('form-feedback');
   if (!name || !email || !subject || !message) {
     feedback.textContent = 'Please fill in all fields before sending.';
-    feedback.className = 'form-feedback error';
+    feedback.className   = 'form-feedback error';
     return;
   }
   const body = `Hi Mooketsi,%0A%0AName: ${encodeURIComponent(name)} (${encodeURIComponent(email)})%0A%0A${encodeURIComponent(message)}`;
   window.open(`mailto:Kosamooketsi@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
   feedback.textContent = 'Your mail app should now be open — just hit send!';
-  feedback.className = 'form-feedback';
+  feedback.className   = 'form-feedback';
 }
 
-// ── CV Links — update these two URLs with your actual links ─
+// ── CV Links ────────────────────────────────────
 const CV_LINKS = {
   software: 'https://drive.google.com/file/d/1x5PDthVA5Hfl-UgCDUpUrqAJwcQIZ-W1/view?usp=drive_link',
   data:     'https://drive.google.com/file/d/1D5TLQ81I6MUi-KRBFvJWt7YSMgXWN_-W/view?usp=drive_link'
 };
-
-// Inject links into all CV buttons
 function initCvLinks() {
   ['sw-cv-link-header','sw-cv-link-card'].forEach(id => {
     const el = document.getElementById(id);
-    if (el && CV_LINKS.software !== 'https://drive.google.com/file/d/1x5PDthVA5Hfl-UgCDUpUrqAJwcQIZ-W1/view?usp=drive_link') el.href = CV_LINKS.software;
+    if (el) el.href = CV_LINKS.software;
   });
   ['de-cv-link-header','de-cv-link-card'].forEach(id => {
     const el = document.getElementById(id);
-    if (el && CV_LINKS.data !== 'https://drive.google.com/file/d/1D5TLQ81I6MUi-KRBFvJWt7YSMgXWN_-W/view?usp=drive_link') el.href = CV_LINKS.data;
+    if (el) el.href = CV_LINKS.data;
   });
 }
 initCvLinks();
@@ -142,90 +140,220 @@ initCvLinks();
 // ── CV Dropdown toggle ───────────────────────────
 function toggleCvDropdown(id) {
   const dropdown = document.getElementById(id);
-  const isOpen = dropdown.classList.contains('open');
-  // close all dropdowns first
+  const isOpen   = dropdown.classList.contains('open');
   document.querySelectorAll('.cv-dropdown.open').forEach(d => d.classList.remove('open'));
   if (!isOpen) dropdown.classList.add('open');
 }
-
-// Close dropdown when clicking outside
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.cv-dropdown')) {
     document.querySelectorAll('.cv-dropdown.open').forEach(d => d.classList.remove('open'));
   }
 });
 
-// ── Particle Canvas ─────────────────────────────
-(function() {
-  const canvas  = document.getElementById('particles-canvas');
-  const ctx     = canvas.getContext('2d');
-  let W, H, particles;
+// ══════════════════════════════════════════════════
+//  THREE.JS HERO — replaces particle canvas
+// ══════════════════════════════════════════════════
+(function initThreeHero() {
+  const canvas = document.getElementById('threejs-canvas');
+  if (!canvas || typeof THREE === 'undefined') return;
 
-  const NUM = 55;
-  const COLORS = ['rgba(37,99,235,', 'rgba(99,102,241,', 'rgba(14,165,233,'];
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000000, 0);
 
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
+  const scene  = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 0, 5);
+
+  // ── Ambient + point lights
+  scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+  const pointLight1 = new THREE.PointLight(0x2563eb, 2, 20);
+  pointLight1.position.set(3, 3, 3);
+  scene.add(pointLight1);
+  const pointLight2 = new THREE.PointLight(0x6366f1, 1.5, 20);
+  pointLight2.position.set(-3, -2, 2);
+  scene.add(pointLight2);
+
+  // ── Central rotating icosahedron (centrepiece)
+  const icoGeo = new THREE.IcosahedronGeometry(1.1, 1);
+  const icoMat = new THREE.MeshPhongMaterial({
+    color: 0x2563eb,
+    emissive: 0x1e3a8a,
+    shininess: 120,
+    wireframe: false,
+    transparent: true,
+    opacity: 0.85,
+  });
+  const ico = new THREE.Mesh(icoGeo, icoMat);
+  ico.position.set(2.8, 0.2, -1);
+  scene.add(ico);
+
+  // ── Wireframe shell around it
+  const wireMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, wireframe: true, transparent: true, opacity: 0.18 });
+  const wire    = new THREE.Mesh(new THREE.IcosahedronGeometry(1.3, 1), wireMat);
+  wire.position.copy(ico.position);
+  scene.add(wire);
+
+  // ── Orbiting smaller spheres
+  const orbitGroup = new THREE.Group();
+  orbitGroup.position.copy(ico.position);
+  scene.add(orbitGroup);
+  const orbitColors = [0x6366f1, 0x0ea5e9, 0x2563eb, 0xa855f7];
+  const orbiters    = [];
+  orbitColors.forEach((col, i) => {
+    const angle  = (i / orbitColors.length) * Math.PI * 2;
+    const radius = 1.85 + (i % 2) * 0.3;
+    const sm     = new THREE.Mesh(
+      new THREE.SphereGeometry(0.07 + i * 0.015, 8, 8),
+      new THREE.MeshPhongMaterial({ color: col, emissive: col, emissiveIntensity: 0.5 })
+    );
+    sm.position.set(Math.cos(angle) * radius, Math.sin(angle) * radius * 0.6, 0);
+    orbitGroup.add(sm);
+    orbiters.push({ mesh: sm, radius, speed: 0.4 + i * 0.12, offset: angle });
+  });
+
+  // ── Floating particles field
+  const partCount   = 180;
+  const partPositions = new Float32Array(partCount * 3);
+  for (let i = 0; i < partCount * 3; i++) {
+    partPositions[i] = (Math.random() - 0.5) * 14;
   }
+  const partGeo = new THREE.BufferGeometry();
+  partGeo.setAttribute('position', new THREE.BufferAttribute(partPositions, 3));
+  const partMat = new THREE.PointsMaterial({ color: 0x3b82f6, size: 0.045, transparent: true, opacity: 0.55 });
+  const points  = new THREE.Points(partGeo, partMat);
+  scene.add(points);
 
-  function Particle() {
-    this.reset = function() {
-      this.x    = Math.random() * W;
-      this.y    = Math.random() * H;
-      this.r    = Math.random() * 2.2 + 0.6;
-      this.vx   = (Math.random() - 0.5) * 0.35;
-      this.vy   = (Math.random() - 0.5) * 0.35;
-      this.col  = COLORS[Math.floor(Math.random() * COLORS.length)];
-      this.alpha= Math.random() * 0.4 + 0.15;
-    };
-    this.reset();
-    this.y = Math.random() * H; // spread initial Y
-  }
-
-  function init() {
-    resize();
-    particles = Array.from({ length: NUM }, () => new Particle());
-  }
-
-  function drawLine(a, b, dist, maxDist) {
-    const op = (1 - dist / maxDist) * 0.15;
-    ctx.beginPath();
-    ctx.moveTo(a.x, a.y);
-    ctx.lineTo(b.x, b.y);
-    ctx.strokeStyle = `rgba(37,99,235,${op})`;
-    ctx.lineWidth = 0.8;
-    ctx.stroke();
-  }
-
-  function frame() {
-    ctx.clearRect(0, 0, W, H);
-    const MAX_DIST = 160;
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < -10) p.x = W + 10;
-      if (p.x > W + 10) p.x = -10;
-      if (p.y < -10) p.y = H + 10;
-      if (p.y > H + 10) p.y = -10;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = p.col + p.alpha + ')';
-      ctx.fill();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const q = particles[j];
-        const dx = p.x - q.x, dy = p.y - q.y;
-        const d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < MAX_DIST) drawLine(p, q, d, MAX_DIST);
-      }
+  // ── Connection lines between nearby particles (sparse)
+  const lineMat  = new THREE.LineBasicMaterial({ color: 0x2563eb, transparent: true, opacity: 0.06 });
+  const lineGeo  = new THREE.BufferGeometry();
+  const lineVerts = [];
+  for (let i = 0; i < partCount; i++) {
+    for (let j = i + 1; j < partCount; j++) {
+      const ax = partPositions[i*3], ay = partPositions[i*3+1], az = partPositions[i*3+2];
+      const bx = partPositions[j*3], by = partPositions[j*3+1], bz = partPositions[j*3+2];
+      const d  = Math.sqrt((ax-bx)**2 + (ay-by)**2 + (az-bz)**2);
+      if (d < 1.8) { lineVerts.push(ax,ay,az,bx,by,bz); }
     }
-    requestAnimationFrame(frame);
   }
+  lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(lineVerts, 3));
+  scene.add(new THREE.LineSegments(lineGeo, lineMat));
 
-  window.addEventListener('resize', resize);
-  init();
-  frame();
+  // ── Mouse parallax
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX / window.innerWidth  - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  // ── Resize
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // ── Scroll-based fade — hide Three.js canvas below hero
+  window.addEventListener('scroll', () => {
+    const heroH  = document.getElementById('hero').offsetHeight;
+    const scrollY = window.scrollY;
+    const opacity = Math.max(0, 1 - scrollY / (heroH * 0.7));
+    canvas.style.opacity = opacity;
+  }, { passive: true });
+
+  // ── Animation loop
+  const clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // Rotate icosahedron
+    ico.rotation.x = t * 0.22;
+    ico.rotation.y = t * 0.35;
+    wire.rotation.x = -t * 0.18;
+    wire.rotation.y =  t * 0.28;
+
+    // Orbit the small spheres
+    orbiters.forEach((o, i) => {
+      const a = o.offset + t * o.speed;
+      o.mesh.position.set(
+        Math.cos(a) * o.radius,
+        Math.sin(a) * o.radius * 0.6,
+        Math.sin(a * 0.7) * 0.4
+      );
+    });
+
+    // Orbit group gentle rock
+    orbitGroup.rotation.z = Math.sin(t * 0.3) * 0.15;
+
+    // Slow particle drift
+    points.rotation.y = t * 0.02;
+    points.rotation.x = t * 0.01;
+
+    // Camera parallax
+    camera.position.x += (mouseX * 0.4 - camera.position.x) * 0.04;
+    camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.04;
+    camera.lookAt(scene.position);
+
+    // Pulse point light
+    pointLight1.intensity = 2 + Math.sin(t * 1.5) * 0.6;
+
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+// ══════════════════════════════════════════════════
+//  3D TILT on project cards (mouse tracking)
+// ══════════════════════════════════════════════════
+(function initCardTilt() {
+  const TILT_MAX = 12; // degrees
+
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect   = card.getBoundingClientRect();
+      const cx     = rect.left + rect.width  / 2;
+      const cy     = rect.top  + rect.height / 2;
+      const dx     = (e.clientX - cx) / (rect.width  / 2);
+      const dy     = (e.clientY - cy) / (rect.height / 2);
+      const rotX   = -dy * TILT_MAX;
+      const rotY   =  dx * TILT_MAX;
+      card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.03,1.03,1.03)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+    });
+  });
+})();
+
+// ══════════════════════════════════════════════════
+//  SCROLL-DRIVEN 3D DEPTH transitions
+// ══════════════════════════════════════════════════
+(function initScrollDepth() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  const depthSections = document.querySelectorAll('.section-3d');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.transform  = 'perspective(1200px) rotateX(0deg) translateZ(0px)';
+        entry.target.style.opacity    = '1';
+        entry.target.style.transition = 'transform 0.7s cubic-bezier(0.23,1,0.32,1), opacity 0.6s ease';
+      } else {
+        entry.target.style.transform  = 'perspective(1200px) rotateX(4deg) translateZ(-40px)';
+        entry.target.style.opacity    = '0.6';
+        entry.target.style.transition = 'transform 0.5s ease, opacity 0.4s ease';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  depthSections.forEach(s => {
+    s.style.transform  = 'perspective(1200px) rotateX(4deg) translateZ(-40px)';
+    s.style.opacity    = '0.6';
+    observer.observe(s);
+  });
 })();

@@ -22,14 +22,19 @@
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <!-- Portfolio CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+
 </head>
 
 <body>
 
-  <!-- ── PARTICLES ──────────────────────────────────── -->
-  <canvas id="particles-canvas"></canvas>
+  <!-- ── THREE.JS CANVAS ───────────────────────────── -->
+  <canvas id="threejs-canvas"></canvas>
 
   <!-- ── NAVBAR ────────────────────────────────────── -->
   <nav id="navbar">
@@ -67,15 +72,14 @@
           <span id="typed-role"></span><span class="typed-cursor">|</span>
         </p>
         <p class="hero-desc">
-          Final-year Computer Science student passionate about building things that work from data pipelines to full-stack web apps.
-           Based in Johannesburg and looking for a graduate role where I can keep growing.
+          Final-year Computer Science student passionate about building things that work — from data pipelines to full-stack web apps.
+          Based in Johannesburg and looking for a graduate role where I can keep growing.
         </p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-primary"><i class="bi bi-grid-3x3-gap-fill"></i> View My Work</a>
           <a href="#contact" class="btn btn-ghost">Get in Touch <i class="bi bi-arrow-right"></i></a>
         </div>
 
-        <!-- Floating tech icons row -->
         <div class="hero-tech-strip">
           <span class="tech-pill"><i class="devicon-python-plain colored"></i> Python</span>
           <span class="tech-pill"><i class="devicon-java-plain colored"></i> Java</span>
@@ -109,7 +113,6 @@
         <p class="card-role">Data Engineer · Software Developer</p>
 
         <div class="card-info-row"><i class="bi bi-geo-alt-fill"></i><span>Johannesburg, <strong>South Africa</strong></span></div>
-        <div class="card-info-row"><i class="bi bi-envelope-fill"></i><span>KosaMooketsi@gmail.com</span></div>
         <div class="card-info-row"><i class="bi bi-telephone-fill"></i><span>(+27) 67 363 8642</span></div>
         <div class="card-info-row"><i class="bi bi-mortarboard-fill"></i><span>BSc CS · <strong>UJ 2026</strong></span></div>
         <div class="card-info-row availability">
@@ -125,7 +128,6 @@
       </div>
     </div>
 
-    <!-- scroll hint -->
     <div class="scroll-hint">
       <span>Scroll</span>
       <div class="scroll-line"></div>
@@ -133,7 +135,7 @@
   </section>
 
   <!-- ── ABOUT ──────────────────────────────────────── -->
-  <section id="about">
+  <section id="about" class="section-3d">
     <div class="container">
       <div class="about-grid">
 
@@ -158,12 +160,12 @@
 
           <p class="about-text">
             I'm a final-year BSc Computer Science & Informatics student at the University of Johannesburg,
-             building projects across data engineering, backend development,
-              and full-stack web because I genuinely enjoy figuring out how systems fit together.
+            building projects across data engineering, backend development,
+            and full-stack web because I genuinely enjoy figuring out how systems fit together.
           </p>
           <p class="about-text">
             I've completed six projects ranging from real-time Kafka pipelines to full-stack farm management platforms.
-             Each one taught me something new, and that's exactly the kind of environment I want to keep working in.
+            Each one taught me something new, and that's exactly the kind of environment I want to keep working in.
           </p>
           <p class="about-text">
             I am comfortable in teams, and looking for a graduate role where I can contribute from day one.
@@ -173,10 +175,9 @@
             <div class="about-detail"><div class="detail-label">Location</div><div class="detail-val">Johannesburg, Gauteng</div></div>
             <div class="about-detail"><div class="detail-label">Email</div><div class="detail-val" style="font-size:0.78rem;">KosaMooketsi@gmail.com</div></div>
             <div class="about-detail"><div class="detail-label">Degree</div><div class="detail-val">BSc CS & Informatics</div></div>
-            <div class="about-detail"><div class="detail-label">Languages</div><div class="detail-val">English · Setswana </div></div>
+            <div class="about-detail"><div class="detail-label">Languages</div><div class="detail-val">English · Setswana</div></div>
           </div>
 
-          <!-- Tech stack with devicons -->
           <div class="skills-section">
             <h4>Technical Stack</h4>
             <div class="tags-wrap">
@@ -198,15 +199,13 @@
               <span class="skill-tag"><i class="devicon-cplusplus-plain colored"></i>C++</span>
             </div>
           </div>
-
-        
         </div>
       </div>
     </div>
   </section>
 
   <!-- ── RESUME ─────────────────────────────────────── -->
-  <section id="resume">
+  <section id="resume" class="section-3d">
     <div class="container">
       <div class="resume-header">
         <div>
@@ -257,9 +256,19 @@
 
           <div class="timeline-item">
             <div class="timeline-dot"><i class="bi bi-award-fill"></i></div>
+            <div class="timeline-date">2024</div>
+            <div class="timeline-title">Certificate — Artificial Intelligence & 4IR</div>
+            <div class="timeline-org"><i class="bi bi-building"></i> University of Johannesburg</div>
+            <ul class="timeline-desc">
+              <li>AI concepts, machine learning fundamentals, and Fourth Industrial Revolution implications.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-award-fill"></i></div>
             <div class="timeline-date">2023</div>
             <div class="timeline-title">Certificate — Introduction to Python</div>
-            <div class="timeline-org"><i class="bi bi-laptop"></i> Gritlab Africa · Online</div>
+            <div class="timeline-org"><i class="bi bi-laptop"></i> Gritlab Africa (JBS) · Online</div>
             <ul class="timeline-desc">
               <li>Python fundamentals, algorithms, and data-oriented problem-solving.</li>
             </ul>
@@ -275,21 +284,40 @@
               <li>School Treasurer — managed class funds and budget oversight</li>
             </ul>
           </div>
-
         </div>
 
-        <!-- RIGHT: Experience + Projects -->
+        <!-- RIGHT: Experience -->
         <div data-aos="fade-left" data-aos-delay="100">
           <p class="resume-col-title">Experience</p>
 
           <div class="timeline-item">
             <div class="timeline-dot"><i class="bi bi-briefcase-fill"></i></div>
             <div class="timeline-date">Aug 2023 – Nov 2025</div>
-            <div class="timeline-title">Software Developer Intern</div>
+            <div class="timeline-title">Software Developer Intern (Part-Time)</div>
             <div class="timeline-org"><i class="bi bi-building"></i> Johannesburg Business School (JBS)</div>
             <ul class="timeline-desc">
-              <li>Gained hands-on exposure to backend development alongside university studies.</li>
-              <li>Applied Python and Java skills to practical tasks, reinforcing interest in software development and data engineering.</li>
+              <li>Delivered backend services and APIs using Python and Java within an agile cross-functional team.</li>
+              <li>Implemented system integrations and infrastructure improvements that enhanced end-user experience and reduced onboarding time.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-journal-text"></i></div>
+            <div class="timeline-date">Aug 2023 – Nov 2025</div>
+            <div class="timeline-title">Research Assistant (Part-Time)</div>
+            <div class="timeline-org"><i class="bi bi-building"></i> JBS — Grit Lab Africa</div>
+            <ul class="timeline-desc">
+              <li>Co-authored and structured content for the Grit Lab Africa educational book, developing material to equip African learners with practical technology skills.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"><i class="bi bi-person-video3"></i></div>
+            <div class="timeline-date">2025 · 3 Months</div>
+            <div class="timeline-title">Python Tutor (Part-Time)</div>
+            <div class="timeline-org"><i class="bi bi-building"></i> JBS — Grit Lab Bootcamp</div>
+            <ul class="timeline-desc">
+              <li>Designed and delivered hands-on Python sessions, teaching programming fundamentals and problem-solving to <strong>256 students</strong> over 3 months.</li>
             </ul>
           </div>
         </div>
@@ -298,7 +326,7 @@
   </section>
 
   <!-- ── SERVICES ───────────────────────────────────── -->
-  <section id="services">
+  <section id="services" class="section-3d">
     <div class="container">
       <div style="max-width:560px;" data-aos="fade-up">
         <div class="label">What I Offer</div>
@@ -346,7 +374,7 @@
   </section>
 
   <!-- ── PROJECTS ───────────────────────────────────── -->
-  <section id="portfolio">
+  <section id="portfolio" class="section-3d">
     <div class="container">
       <div class="portfolio-header" data-aos="fade-up">
         <div>
@@ -363,43 +391,43 @@
 
       <div class="projects-grid">
 
-        <!-- Card 1 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="60" data-category="fullstack data">
+        <!-- Card 1 — SentinelPath SA (replaces FarmSmart) -->
+        <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="60" data-category="backend">
           <div class="project-card-inner">
             <div class="project-front">
               <div class="project-thumb" style="--thumb-from:#dcfce7;--thumb-to:#bbf7d0;">
-                <div class="project-thumb-icon" style="background:#16a34a;box-shadow:0 8px 32px rgba(22,163,74,0.4);">
-                  <i class="bi bi-tree-fill"></i>
+                <div class="project-thumb-icon" style="background:#059669;box-shadow:0 8px 32px rgba(5,150,105,0.4);">
+                  <i class="bi bi-map-fill"></i>
                 </div>
-                <div class="project-year">2026</div>
+                <div class="project-year">2025</div>
               </div>
               <div class="project-body">
-                <div class="project-type"><span class="type-dot" style="background:#16a34a"></span>Full-Stack · Data Engineering</div>
-                <div class="project-title">FarmSmart Analytics Platform</div>
-                <p class="project-desc">Farm management data layer with PostgreSQL, weather feeds, and real-time dashboard analytics via Flask REST API.</p>
+                <div class="project-type"><span class="type-dot" style="background:#059669"></span>Algorithms · JavaFX</div>
+                <div class="project-title">SentinelPath SA</div>
+                <p class="project-desc">Disaster response pathfinding tool — converts aerial images into risk-weighted graphs and runs Dijkstra & A* side by side.</p>
                 <div class="project-tags">
-                  <span class="project-tag"><i class="devicon-python-plain colored"></i>Python</span>
-                  <span class="project-tag"><i class="devicon-flask-original"></i>Flask</span>
-                  <span class="project-tag"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                  <span class="project-tag"><i class="devicon-java-plain colored"></i>Java</span>
+                  <span class="project-tag"><i class="bi bi-map"></i> JavaFX</span>
+                  <span class="project-tag"><i class="bi bi-diagram-3"></i> Dijkstra / A*</span>
                 </div>
                 <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
               </div>
             </div>
-            <div class="project-back" style="--back-color:#16a34a;">
-              <div class="project-back-icon"><i class="bi bi-tree-fill"></i></div>
-              <h3>FarmSmart</h3>
-              <p>Built the entire data layer: normalised PostgreSQL schema for crop, livestock, and expense records. Integrated external weather feeds for enrichment and analytics.</p>
+            <div class="project-back" style="--back-color:#059669;">
+              <div class="project-back-icon"><i class="bi bi-map-fill"></i></div>
+              <h3>SentinelPath SA</h3>
+              <p>Converts aerial imagery into risk-weighted graphs. Runs Dijkstra and A* in parallel for visual comparison of optimal evacuation routes.</p>
               <ul class="project-back-list">
-                <li><i class="bi bi-check2-circle"></i> External weather API integration</li>
-                <li><i class="bi bi-check2-circle"></i> Real-time dashboard analytics</li>
-                <li><i class="bi bi-check2-circle"></i> Normalised multi-table schema</li>
+                <li><i class="bi bi-check2-circle"></i> Aerial image → risk graph</li>
+                <li><i class="bi bi-check2-circle"></i> Dijkstra & A* side-by-side</li>
+                <li><i class="bi bi-check2-circle"></i> JavaFX visual interface</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="120" data-category="fullstack">
+        <!-- Card 2 — FarmForward -->
+        <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="120" data-category="fullstack">
           <div class="project-card-inner">
             <div class="project-front">
               <div class="project-thumb" style="--thumb-from:#fef9c3;--thumb-to:#fde68a;">
@@ -433,8 +461,8 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="180" data-category="fullstack">
+        <!-- Card 3 — Eco-Hub -->
+        <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="180" data-category="fullstack">
           <div class="project-card-inner">
             <div class="project-front">
               <div class="project-thumb" style="--thumb-from:#fae8ff;--thumb-to:#e9d5ff;">
@@ -468,8 +496,8 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="240" data-category="fullstack">
+        <!-- Card 4 — Developer Portfolio -->
+        <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="240" data-category="fullstack">
           <div class="project-card-inner">
             <div class="project-front">
               <div class="project-thumb" style="--thumb-from:#fed7aa;--thumb-to:#fdba74;">
@@ -481,10 +509,11 @@
               <div class="project-body">
                 <div class="project-type"><span class="type-dot" style="background:#ea580c"></span>Full-Stack · Personal Brand</div>
                 <div class="project-title">Developer Portfolio</div>
-                <p class="project-desc">Responsive personal portfolio with animated particle canvas, typed roles, project filtering, skill bars, and a contact form.</p>
+                <p class="project-desc">Responsive personal portfolio with Three.js 3D hero, AOS scroll animations, project filtering, and a contact form.</p>
                 <div class="project-tags">
                   <span class="project-tag"><i class="devicon-html5-plain colored"></i>HTML/CSS</span>
                   <span class="project-tag"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                  <span class="project-tag"><i class="bi bi-box"></i> Three.js</span>
                 </div>
                 <div class="project-hover-hint"><i class="bi bi-cursor-fill"></i> Hover for details</div>
               </div>
@@ -492,18 +521,18 @@
             <div class="project-back" style="--back-color:#ea580c;">
               <div class="project-back-icon"><i class="bi bi-person-badge-fill"></i></div>
               <h3>Developer Portfolio</h3>
-              <p>Custom-built portfolio site showcasing projects, skills and experience with polished animations and a fully responsive layout.</p>
+              <p>Custom-built portfolio site with Three.js 3D background, 3D card tilt effects, scroll-driven transitions, and a fully responsive layout.</p>
               <ul class="project-back-list">
-                <li><i class="bi bi-check2-circle"></i> Particle canvas &amp; typed animation</li>
-                <li><i class="bi bi-check2-circle"></i> Project filter &amp; flip cards</li>
+                <li><i class="bi bi-check2-circle"></i> Three.js 3D hero scene</li>
                 <li><i class="bi bi-check2-circle"></i> AOS scroll animations</li>
+                <li><i class="bi bi-check2-circle"></i> Project filter & flip cards</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- Card 5 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="data">
+        <!-- Card 5 — Real-Time Data Pipeline -->
+        <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="300" data-category="data">
           <div class="project-card-inner">
             <div class="project-front">
               <div class="project-thumb" style="--thumb-from:#dbeafe;--thumb-to:#bfdbfe;">
@@ -538,8 +567,8 @@
           </div>
         </div>
 
-        <!-- Card 6 -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="360" data-category="backend">
+        <!-- Card 6 — RESTful API Service -->
+        <div class="project-card tilt-card" data-aos="fade-up" data-aos-delay="360" data-category="backend">
           <div class="project-card-inner">
             <div class="project-front">
               <div class="project-thumb" style="--thumb-from:#e0f2fe;--thumb-to:#bae6fd;">
@@ -578,7 +607,7 @@
   </section>
 
   <!-- ── CONTACT ────────────────────────────────────── -->
-  <section id="contact">
+  <section id="contact" class="section-3d">
     <div class="container">
       <div data-aos="fade-up">
         <div class="label">Contact</div>
@@ -592,7 +621,6 @@
 
           <div class="contact-item"><i class="bi bi-geo-alt-fill"></i><div><strong>Location</strong><span>Johannesburg, Gauteng, South Africa</span></div></div>
           <div class="contact-item"><i class="bi bi-telephone-fill"></i><div><strong>Phone</strong><span>(+27) 67 363 8642</span></div></div>
-          <div class="contact-item"><i class="bi bi-envelope-fill"></i><div><strong>Email</strong><span>KosaMooketsi@gmail.com</span></div></div>
           <div class="contact-item" style="border-bottom:none;"><i class="bi bi-linkedin"></i><div><strong>LinkedIn</strong><span>linkedin.com/in/Mooketsikosa</span></div></div>
 
           <div class="contact-socials">
@@ -648,7 +676,7 @@
     <i class="bi bi-arrow-up"></i>
   </button>
 
-  <!-- AOS from CDN -->
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="assets/js/main.js"></script>
 </body>

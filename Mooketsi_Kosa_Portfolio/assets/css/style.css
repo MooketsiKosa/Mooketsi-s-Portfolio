@@ -1185,3 +1185,35 @@ footer {
   color: var(--grey-400);
   display: flex; align-items: center; gap: 5px;
 }
+
+/* ════════════════════════════════════════════
+   THREE.JS & 3D MOTION
+════════════════════════════════════════════ */
+
+/* Three.js hero canvas — fixed fullscreen behind everything */
+#threejs-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Scroll-driven 3D depth — sections start recessed, snap forward on enter */
+.section-3d {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+/* 3D tilt project cards */
+.project-card {
+  transform-style: preserve-3d;
+  transition: transform 0.08s ease-out, box-shadow 0.3s ease;
+}
+.project-card:hover {
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(37, 99, 235, 0.15);
+}
