@@ -90,15 +90,15 @@ Copy an existing `<!-- Card N -->` block in `index.html` and update the title, d
 
 ### Updating the Three.js scene
 The entire Three.js setup lives in the `initThreeHero` IIFE at the bottom of `main.js`. Key variables:
-- `TILT_MAX` — maximum tilt angle for project cards (default `12` degrees)
-- `partCount` — number of floating particles in the hero (default `180`)
-- `orbitColors` — colours of the orbiting spheres around the icosahedron
+- `TILT_MAX` - maximum tilt angle for project cards (default `12` degrees)
+- `partCount` - number of floating particles in the hero (default `180`)
+- `orbitColors` - colours of the orbiting spheres around the icosahedron
 
 ## Deployment (Netlify)
 
 1. Push the project to a GitHub repository
 2. Log in to [netlify.com](https://netlify.com) and click **Add new site → Import from Git**
-3. Select the repository — no build command needed, publish directory is the root (`/`) or the folder containing `index.html`
+3. Select the repository - no build command needed, publish directory is the root (`/`) or the folder containing `index.html`
 4. Click **Deploy site**
 
 Netlify will assign a URL immediately. To use a custom domain, go to **Site settings → Domain management**.
